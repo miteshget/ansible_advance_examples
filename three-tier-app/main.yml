@@ -4,15 +4,15 @@
   gather_facts: false   # Speeds up the execution
   roles:
 
-    - HAproxy
+    - role: HAproxy
       when: inventory_hostname in groups['frontends']
       
-    - apache
+    - role: apache
       when: inventory_hostname in groups['apps']
 
-    - tomcat
+    - role: tomcat
       when: inventory_hostname in groups['apps']
 
-    - postgresql
+    - role: postgresql
       when: inventory_hostname in groups['appdbs']
 
