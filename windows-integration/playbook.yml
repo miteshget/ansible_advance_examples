@@ -1,10 +1,28 @@
 ---
+- name: Setting up Bastions
+  hosts: localhost  
+  become: yes
+  tasks:
+  - name: Install Packages
+    yum: 
+      name:
+        - python-devel 
+        - krb5-devel 
+        - krb5-libs 
+        - krb5-workstation 
+        - python-pip 
+        - gcc
+        - python-ldap
+        - sshpass     
+  - name: Install pywinrm module
+    shell: pip install "pywinrm>=0.2.2" 
+
 - name: Play for setting up windows 
   hosts: windows
+
   vars_files:
     - ./ad_user_vars.yml
-    - ./ssh_var.yml
-
+    - ./ssh_var.yml     
   roles:
     - win_ad_install
     - win_ad_user
