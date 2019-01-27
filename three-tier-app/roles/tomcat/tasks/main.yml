@@ -16,16 +16,26 @@
     dest: /usr/share/tomcat/webapps/ROOT/index.html
     mode: 0644
 
-- name: copy static index.html to tomcat webapps/ansible/index.html
-  template:
-    src: index.html.app1
-    dest: /usr/share/tomcat/webapps/ansible/index.html
+- block:
+    - name: create ansible tomcat directory
+    file:
+        path: /usr/share/tomcat/webapps/ansible
+        state: directory
+    - name: copy static index.html to tomcat webapps/ansible/index.html
+    template:
+        src: index.html.app1
+        dest: /usr/share/tomcat/webapps/ansible/index.html
   when: inventory_hostname == "app1"
 
-- name: copy static index.html to tomcat webapps/ansible/index.html
-  template:
-    src: index.html.app1
-    dest: /usr/share/tomcat/webapps/ansible/index.html
+- block:
+    - name: create ansible tomcat directory
+    file:
+        path: /usr/share/tomcat/webapps/ansible
+        state: directory
+    - name: copy static index.html to tomcat webapps/ansible/index.html
+    template:
+        src: index.html.app1
+        dest: /usr/share/tomcat/webapps/ansible/index.html
   when: inventory_hostname == "app2"
 
 - name: start tomcat
