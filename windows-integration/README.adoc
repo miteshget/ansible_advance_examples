@@ -1,9 +1,9 @@
 :toc2:
 
-== Ansible Integrations Solutions
+== Windows Integration
 
 .To run 
 
 * git clone https://github.com/miteshrh/examples.git
 * cd examples/windows-integration
-* ansible-playbook main.yml -e GUID=<your guid>
+* ansible-playbook playbook.yml -e GUID=<your guid>
