@@ -1,0 +1,19 @@
+[frontends] # These are the frontend servers
+frontend1 ansible_host=frontend1."{{ GUID }}".internal
+
+[apps] ## These are the apps servers
+app1 ansible_host=app1."{{ GUID }}".internal
+app2 ansible_host=app2."{{ GUID }}".internal
+
+[appdbs] # These are the appdb servers
+appdb1 ansible_host=appdb1."{{ GUID }}".internal
+
+[internal:children]
+frontends
+apps
+appdbs
+
+[internal:vars]
+timeout=60
+ansible_become=yes
+ansible_user=ec2-user
