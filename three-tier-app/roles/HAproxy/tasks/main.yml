@@ -9,13 +9,12 @@
   service:
     name: haproxy
     state: started
+    enabled: yes
 
 - name: configure haproxy
   template:
     src: haproxy.cfg.j2
     dest: /etc/haproxy/haproxy.cfg
+  notify: HAproxy_restart
 
-- name: restart HAproxy
-  service:
-    name: haproxy
-    state: restarted
+
