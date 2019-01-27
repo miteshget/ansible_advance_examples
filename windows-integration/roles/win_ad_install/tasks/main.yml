@@ -18,7 +18,7 @@
 - name: List Domain Controllers in domain
   win_shell: "nltest /dclist:{{ ad_domain_name }}"
   register: domain_list
-  until: domain_list.stderr != ""
+  until: domain_list.stderr == ""
   retries: 10
 
 - debug:
