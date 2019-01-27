@@ -1,0 +1,5 @@
+:toc2:
+
+== Ansible Integrations Solutions
+
+This repository contains many playbooks along with roles and variable files which are solutions to Ansible Integration Course.

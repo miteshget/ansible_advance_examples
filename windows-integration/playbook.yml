@@ -1,0 +1,11 @@
+---
+- name: Play for setting up windows 
+  hosts: windows
+  vars_files:
+    - ./ad_user_vars.yml
+    - ./ssh_var.yml
+
+  roles:
+    - win_ad_install
+    - win_ad_user
+    - win_service_config
