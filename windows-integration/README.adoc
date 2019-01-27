@@ -2,4 +2,8 @@
 
 == Ansible Integrations Solutions
 
-This repository contains many playbooks along with roles and variable files which are solutions to Ansible Integration Course.
+.To run 
+
+* git clone https://github.com/miteshrh/examples.git
+* cd examples/windows-integration
+* ansible-playbook main.yml -e GUID=<your guid>
