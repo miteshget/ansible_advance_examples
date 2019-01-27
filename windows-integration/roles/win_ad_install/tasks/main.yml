@@ -1,3 +1,4 @@
+---
 - name: Install AD-Domain-Services feature
   win_feature:
     name: AD-Domain-Services
@@ -17,6 +18,8 @@
 - name: List Domain Controllers in domain
   win_shell: "nltest /dclist:{{ ad_domain_name }}"
   register: domain_list
+  until: domain_list.stderr != ""
+  retry: 10
 
 - debug:
    var: domain_list
