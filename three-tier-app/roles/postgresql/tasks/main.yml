@@ -5,24 +5,20 @@
     name: postgresql-server
     state: latest
 
-- name: enable apache at boot
-  service:
-    name: postgresql
-
 - name: tell user to finish setting up postgres
   debug:
     msg: "Either uncomment the postgres setup or manually login and initialize"
 
-
-# only run the next 2 tasks once!
-#  - name: initilize postgres
-#    command: postgresql-setup initdb
-#  - name: initilize postgres some more
-#      command: chkconfig postgresql on
-
+# test postgresql Initilization
+- name: Check database initialization
+  command: postgresql-check-db-dir  /var/lib/pgsql/data
+  register: check_db_output
+- name: initilize postgres
+  shell: postgresql-setup initdb
+  when: check_db_output.rc != 0
 
 - name: start postgres
   service:
-    name: postgresql.service
+    name: postgresql
     enabled: yes
     state: started

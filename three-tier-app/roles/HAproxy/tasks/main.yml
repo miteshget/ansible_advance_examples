@@ -5,7 +5,7 @@
     name: haproxy 
     state: latest
 
-- name: enable HAProxy
+- name: start and enable HAProxy
   service:
     name: haproxy
     state: started
