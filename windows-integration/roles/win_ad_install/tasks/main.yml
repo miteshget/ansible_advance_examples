@@ -19,7 +19,7 @@
   win_shell: "nltest /dclist:{{ ad_domain_name }}"
   register: domain_list
   until: domain_list.stderr != ""
-  retry: 10
+  retries: 10
 
 - debug:
    var: domain_list
