@@ -11,9 +11,24 @@
       mode: 0400
     loop: 
       - /home/cloud-user/.ssh/openstack.pem
-      - /root/openstack.pem
+      - /root/.ssh/openstack.pem
 
-  - name: Download ssh public key 
+
+- name: Basic config for control node
+  hosts: localhost
+  tasks:
+  - name: Download Private key
+    get_url:
+      url: http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+      dest: "{{ item }}"
+      owner: cloud-user
+      group: cloud-user
+      mode: 0400
+    loop: 
+      - /home/cloud-user/.ssh/
+      - /root/.ssh/
+
+  - name: add ssh public key in authorized file
     authorized_key: 
       user: cloud-user
       key: http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
