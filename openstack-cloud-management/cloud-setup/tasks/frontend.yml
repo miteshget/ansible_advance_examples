@@ -3,7 +3,7 @@
     cloud: ospcloud
     name: frontend
     image: rhel-guest
-    meta: group=frontend,deployment_name=dev
+    meta: group=frontends,deployment_name=dev
     flavor: m2.small
     security_groups: frontend_servers 
     key_name: ansible_ssh
