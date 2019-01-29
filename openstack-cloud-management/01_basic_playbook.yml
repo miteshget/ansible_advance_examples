@@ -5,14 +5,14 @@
   - name: Download Private key
     get_url:
       url: http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pem
-      dest: /home/cloud-user/.ssh/openstack.pem
+      dest: "{{ item }}"
       owner: cloud-user
       group: cloud-user
       mode: 0400
     loop: 
       - /home/cloud-user/.ssh/openstack.pem
       - /root/openstack.pem
-      
+
   - name: Download ssh public key 
     authorized_key: 
       user: cloud-user
