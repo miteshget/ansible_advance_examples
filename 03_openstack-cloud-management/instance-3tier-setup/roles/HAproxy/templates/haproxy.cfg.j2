@@ -28,3 +28,4 @@ backend app-servers
     {% for i in groups['apps'] %}
     server app1 {{ i }}:8080 cookie app1 check
     server app2 {{ i }}:8080 cookie app2 check
+    {%endfor%}
