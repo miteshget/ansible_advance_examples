@@ -32,6 +32,7 @@
   
 - name: Good Ansible Role based play
   hosts: all
+  become: true
   gather_facts: false   # Speeds up the execution
   roles:
 
