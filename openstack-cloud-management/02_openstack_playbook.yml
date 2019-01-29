@@ -7,3 +7,6 @@
     - include_tasks: tasks/keypair.yml
     - include_tasks: tasks/security_group.yml
     - include_tasks: tasks/frontend.yml
+    - include_tasks: tasks/app1.yml
+    - include_tasks: tasks/app2.yml
+    - include_tasks: tasks/db.yml
