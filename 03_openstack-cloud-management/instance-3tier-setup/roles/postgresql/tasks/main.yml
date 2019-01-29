@@ -14,6 +14,7 @@
   command: postgresql-check-db-dir  /var/lib/pgsql/data
   register: check_db_output
   changed_when: check_db_output == 1
+  ignore_errors: yes
   
 - name: initilize postgres
   shell: postgresql-setup initdb
