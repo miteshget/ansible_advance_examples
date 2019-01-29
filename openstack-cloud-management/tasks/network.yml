@@ -1,59 +1,51 @@
-- name: Configuration of Public Networks
-  os_network:
-    cloud: ospcloud
-    state: present
-    name: ext_network
-    external: True
-
-- name: Configuration of Subnets for Public and Private SubNets
-  os_subnet:
+- os_network:
+      cloud: ospcloud
+      state: present
+      name: ext_network
+      external: true
+- os_subnet:
     cloud: ospcloud
     state: present
     network_name: ext_network
-    name: ext_subnet
-    cidr: "10.10.10.0/24"
+    name: external_subnet
+    cidr: 10.10.10.0/24
     dns_nameservers:
-      - 8.8.8.7
-      - 8.8.8.8
+       - 8.8.8.7
+       - 8.8.8.8
     host_routes:
-      - destination: 0.0.0.0/0
-        nexthop: 10.10.10.0
-      - destination: 192.168.0.0/24
-        nexthop: 192.168.0.0
-
-
-- name: Configuration Private Networks
-  os_network:
+       - destination: 0.0.0.0/0
+         nexthop: 10.10.10.0
+       - destination: 192.168.0.0/24
+         nexthop: 192.168.0.0
+- os_network:
     cloud: ospcloud
     state: present
     name: int_network
-    external: False
-
-- name: Configuration of Subnets for Public and Private SubNets
-  os_subnet:
+    external: false
+  register: internal
+  tags:
+   - tested
+- os_subnet:
     cloud: ospcloud
     state: present
     network_name: int_network
     name: int_subnet
-    cidr: "20.20.20.0/24"
+    cidr: 20.20.20.0/24
     dns_nameservers:
-      - 8.8.8.7
-      - 8.8.8.8
+       - 8.8.8.7
+       - 8.8.8.8
     host_routes:
-      - destination: 0.0.0.0/0
-        nexthop: 10.10.10.0
-      - destination: 192.168.0.0/24
-        nexthop: 192.168.0.0
+       - destination: 0.0.0.0/0
+         nexthop: 192.168.0.0
+       - destination: 192.168.0.0/24
+         nexthop: 192.168.0.0
 
-- name: Create Router
-  os_router:
+- os_router:
     cloud: ospcloud
     state: present
     name: router
     network: ext_network
     external_fixed_ips:
-      - { subnet: ext_subnet }
+      - subnet: external_subnet
     interfaces:
       - int_subnet
-
-
