@@ -1,4 +1,4 @@
-- name: Create a server instance
+- name: Create app2 server instance
   os_server:
     cloud: ospcloud
     name: app2
