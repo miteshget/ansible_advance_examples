@@ -1,9 +1,9 @@
 ---          
 - hosts: localhost
   tasks:     
-    - include_tasks: network.yml
-    - include_tasks: image.yml
-    - include_tasks: flavor.yml
-    - include_tasks: keypair.yml
-    - include_tasks: security_group.yml
-    - include_tasks: frontend.yml
+    - include_tasks: tasks/network.yml
+    - include_tasks: tasks/image.yml
+    - include_tasks: tasks/flavor.yml
+    - include_tasks: tasks/keypair.yml
+    - include_tasks: tasks/security_group.yml
+    - include_tasks: tasks/frontend.yml
