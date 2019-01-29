@@ -10,12 +10,11 @@
       group: cloud-user
       mode: 0400
 
-  - name: Copy ssh public key on all servers
+  - name: Download ssh public key 
     authorized_key: 
       user: cloud-user
       key: http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
-    # when: (copy_ssh_pubkey ) and ( inventory_hostname != 'localhost' )
-#wget http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub
+    
   - name: Install packages
     yum:
       name:
