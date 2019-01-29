@@ -1,6 +1,4 @@
 ---
-- hosts: jumpbox
-  tasks:   
   - name: Download RHEL image
     get_url:
       url: http://www.opentlc.com/download/osp_advanced_networking/rhel-guest-image-7.2-20151102.0.x86_64.qcow2
