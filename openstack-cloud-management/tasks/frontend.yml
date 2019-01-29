@@ -1,5 +1,5 @@
 - name: Create a server instance
-    os_server:
+  os_server:
       cloud: ospcloud
       name: frontend
       image: rhel-guest
