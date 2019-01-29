@@ -36,7 +36,7 @@
   - name: create clouds.yml
     template:
       src: clouds.yml.j2
-      path: /etc/openstack/clouds.yml
+      dest: /etc/openstack/clouds.yml
   
   - name: Verify openstack connectivity
     os_auth:
