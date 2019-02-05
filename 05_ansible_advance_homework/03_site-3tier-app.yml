@@ -1,8 +1,16 @@
+- hosts: localhost
+  tasks:
+  - name: Create workstation inventory
+    add_host:
+       name: "workstation-{{OSP_GUID}}.rhpds.opentlc.com"
+       group: workstation
+
 - hosts: workstation
   gather_facts: true
   roles:
   - name: osp-facts
-
+  tasks:
+  - debug: var=inventory_hostname
 # Setup front-end load balancer tier
 
 
