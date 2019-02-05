@@ -9,10 +9,14 @@
   gather_facts: true
   roles:
   - name: osp-facts
-  tasks:
-  - debug: var=inventory_hostname
 # Setup front-end load balancer tier
 
+- hosts: localhost
+  gather_facts: false
+  tasks:
+  - debug: var=groups['all']
+  - debug: var=hostvar['all']
+  - debug: var=groups
 
 - name: setup load-balancer tier
   hosts: frontends
