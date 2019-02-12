@@ -50,4 +50,5 @@
 | roles/config-tower/tasks/pre-config-tower.yml | Any pre config tasks needed
 | roles/config-tower/tasks/workflow_template.yml | genrate workflow from `workflow.yml` file
 | roles/config-tower/tasks/post-config-tower.yml | any post config jobs
+| ssh.cfg | ssh proxy configuration
 |===
