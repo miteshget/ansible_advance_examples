@@ -1,0 +1,8 @@
+TOWER_GUID=358e
+OSP_GUID=e9a4
+OPENTLC_LOGIN=mitsharm-redhat.com
+#OPENTLC_PASSWORD=
+#GITHUB_REPO=https://github.com/<githubhandler>/ansible_advance_homework
+#JQ_REPO_BASE=http://www.opentlc.com/download/ansible_bootcamp
+REGION=us-east-1
+RH_MAIL_ID=mitsharm@redhat.com
