@@ -13,7 +13,7 @@
   roles:
     - setup-workstation
 
-- import_playbook: 00_site-install-isolated-node.yml 
+- import_playbook: 01_site-install-isolated-node.yml 
 - import_playbook: 02_site-osp-instances.yml
 
 - import_playbook: 03_site-3tier-app.yml
