@@ -24,12 +24,13 @@
 |===
 | Files or dir | Purpose
 | 00_rc | Run command file to setup variables
-| 01_site-setup-workstation.yml | Playbook to call role
+| 00_site-setup-workstation.yml | Playbook to call role
+| 01_site-install-isolated-node.yml | Playbook to install isolated node
 | 02_site-osp-instances.yml | Playbook to call role
 
 | 03_site-3tier-app.yml | Playbook to deploy three tier app
-| site-install-isolated-node.yml | Playbook to install isolated node
-| site-config-tower.yml | Playbook to call role `config-tower`
+
+| 04_site-config-tower.yml | Playbook to call role `config-tower`
 | site-osp-delete.yml | Playbook to call role
 
 | site-smoke-osp.yml | Playbook to test three tier app on OSP
