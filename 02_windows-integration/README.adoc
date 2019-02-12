@@ -8,3 +8,4 @@
 * cd examples/windows-integration
 * ./startup.sh
 * ansible-playbook playbook.yml -e GUID=<your guid>
+
