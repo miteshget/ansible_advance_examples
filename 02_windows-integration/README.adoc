@@ -7,5 +7,6 @@
 * git clone https://github.com/miteshrh/examples.git
 * cd examples/windows-integration
 * ./startup.sh
+* ansible windows -m win_ping
 * ansible-playbook playbook.yml -e GUID=<your guid>
 
