@@ -13,10 +13,6 @@
       - /home/cloud-user/.ssh/openstack.pem
       - /root/.ssh/openstack.pem
 
-
-- name: Basic config for control node
-  hosts: localhost
-  tasks:
   - name: Download Private key
     get_url:
       url: http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pub

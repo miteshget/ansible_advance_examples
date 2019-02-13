@@ -12,9 +12,9 @@
   become: yes
   roles:
     - setup-workstation
+    - setup-openstack
 
 - import_playbook: 01_site-install-isolated-node.yml 
 - import_playbook: 02_site-osp-instances.yml
-
 - import_playbook: 03_site-3tier-app.yml
 

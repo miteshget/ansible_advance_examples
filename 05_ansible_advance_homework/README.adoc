@@ -5,17 +5,33 @@
 
 [source,text]
 ----
-[bastion]$ sudo -i
-[bastion]# cd ansible_advance_homework
-[bastion]# TOWER_GUID=<Ansible Tower Homework GUID from mail>
-[bastion]# OSP_GUID=<Openstack for Ansible GUID from mail>
-[bastion]# OPENTLC_LOGIN=<username-company.com>
+
 [bastion]# OPENTLC_PASSWORD=<your openlc account password>
 [bastion]# GITHUB_REPO=https://github.com/<githubhandler>/ansible_advance_homework
 [bastion]# JQ_REPO_BASE=http://www.opentlc.com/download/ansible_bootcamp
 [bastion]# REGION=<enter region name example us-east-1>
 [bastion]# RH_MAIL_ID=<your mail id for dynamic inventory tag>
 [bastion]# ansible-playbook site-config-tower.yml -e tower_GUID=${TOWER_GUID} -e osp_GUID=${OSP_GUID} -e opentlc_login=${OPENTLC_LOGIN} -e path_to_opentlc_key=/root/.ssh/mykey.pem -e param_repo_base=${JQ_REPO_BASE} -e opentlc_password=${OPENTLC_PASSWORD} -e REGION_NAME=${REGION} -e EMAIL=${RH_MAIL_ID} -e github_repo=${GITHUB_REPO}
+----
+
+[source,text]
+----
+laptop]# scp -i /home/<username>/.ssh/your-key.pem /home/<username>/.ssh/your-key.pem username-company.name@bastion.<GUID>.example.com:/tmp
+laptop]# ssh -i /home/<username>/.ssh/your-key.pem  username-company.name@bastion.<GUID>.example.com
+bastion]$  sudo -i
+bastion]# cp /tmp/<your-key.pem>  /root/.ssh/mykey.pem
+bastion]# git clone https://github.com/miteshrh/ansible_advance_examples.git
+bastion]# cd ansible_advance_examples/05_ansible_advance_homework
+bastion]# vim 00_rc
+    TOWER_GUID=358e
+    OSP_GUID=e9a4
+    OPENTLC_LOGIN=user-company.name
+    RH_MAIL_ID=<opentlc-email@id>
+```
+bastion]# source 00_rc
+
+bastion]# ansible-playbook   <Playbook> -e OSP_GUID=${OSP_GUID} -e GUID=${TOWER_GUID} -e ansible_user=${OPENTLC_LOGIN}
+
 ----
 
 
