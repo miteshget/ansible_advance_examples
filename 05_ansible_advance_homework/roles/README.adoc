@@ -13,5 +13,7 @@
 | os-servers | Provision OSP Instances role
 | osp-facts  | Genrate in-memory inventory for OSP instances role
 | osp-instance-delete | Delete OSP Instances role
-| setup-workstation | Setup workstation, create network, ssh keypair, security group etc. role
+| setup-workstation | Setup workstation creates clouds.yml and install pacakges.
+| setup-openstack | Setup openstack env, create network, ssh keypair, security group etc.
+| setup-instance | Creates instances frontend, app1, app2 and db.
 |===

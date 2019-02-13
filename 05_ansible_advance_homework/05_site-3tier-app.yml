@@ -11,13 +11,6 @@
   - name: osp-facts
 # Setup front-end load balancer tier
 
-- hosts: localhost
-  gather_facts: false
-  tasks:
-  - debug: var=groups['all']
-  - debug: var=hostvar['all']
-  - debug: var=groups
-
 - name: setup load-balancer tier
   hosts: frontends
   become: yes
