@@ -1,5 +1,0 @@
-- include_tasks: tasks/network.yml
-- include_tasks: tasks/image.yml
-- include_tasks: tasks/flavor.yml
-- include_tasks: tasks/keypair.yml
-- include_tasks: tasks/security_group.yml
