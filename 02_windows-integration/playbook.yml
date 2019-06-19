@@ -1,5 +1,6 @@
 ---
 - name: Setting up Bastions
+  gather_facts: False
   hosts: localhost  
   become: yes
   tasks:
