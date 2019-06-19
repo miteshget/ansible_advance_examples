@@ -5,7 +5,7 @@
   become: yes
   tasks:
   - name: Install Packages
-    dnf: 
+    yum: 
       name:
         - python-devel 
         - krb5-devel 
