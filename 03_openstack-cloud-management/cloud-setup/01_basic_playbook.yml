@@ -1,6 +1,7 @@
 ---
 - name: Basic config for control node
   hosts: localhost
+  gather_facts: False
   tasks:
   - name: Download Private key
     get_url:
