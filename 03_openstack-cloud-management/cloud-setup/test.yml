@@ -3,6 +3,6 @@
   - name: download file
     get_url:
       url: http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pem
-      dest: /tmp
-      mode: 400
+      dest: /tmp/a.conf
+      mode: '400'
       
