@@ -1,5 +1,5 @@
 ---
 
-- import_playbook: 01_basic_playbook.yml 
+#- import_playbook: 01_basic_playbook.yml 
 - import_playbook: 02_openstack_playbook.yml 
 - import_playbook: 03_inmemory_inventory_playbook.yml
