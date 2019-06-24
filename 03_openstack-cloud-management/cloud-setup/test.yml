@@ -5,4 +5,7 @@
       url: http://www.opentlc.com/download/ansible_bootcamp/openstack_keys/openstack.pem
       dest: /tmp/a.conf
       mode: '400'
+    register: output
+    
+  - debug: var=output
       
