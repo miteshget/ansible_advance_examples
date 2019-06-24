@@ -3,6 +3,7 @@
   import_playbook: in_memory_inventory.yml
 - name: Good Ansible Role based play
   hosts: all
+  become: True
   gather_facts: false   # Speeds up the execution
   roles:
 
