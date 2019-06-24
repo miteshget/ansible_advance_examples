@@ -8,4 +8,8 @@
     register: output
     
   - debug: var=output
+  - debug: var=ansible_fqdn
+  - command: ls /tmp
+    register: output
+  - debug: var=output
       
