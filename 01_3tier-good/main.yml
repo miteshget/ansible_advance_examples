@@ -1,6 +1,6 @@
 ---
-- name: Import In Memory Inventory
-  import_playbook: in_memory_inventory.yml
+#- name: Import In Memory Inventory
+#  import_playbook: in_memory_inventory.yml
 - name: Good Ansible Role based play
   hosts: all
   become: True
